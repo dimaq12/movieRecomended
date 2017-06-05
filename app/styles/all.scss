@@ -1,0 +1,23 @@
+body {
+    background-color: #fbfbfb;
+    padding: 0;
+    margin: 0;
+}
+
+@import "header.scss";
+@import "topMovies.scss";
+
+
+
+.center{
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+.content{
+	margin-top: 30px;
+	h2{
+		text-align: center;
+		font-size: 2em;
+	}
+}

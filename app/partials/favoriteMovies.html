@@ -1,0 +1,28 @@
+<movie-header></movie-header>
+<div class="center content">
+    <h2>Your Favorites Movies</h2>
+    <div class="top-films">
+        <div ng-repeat="item in likedCtrl.data" class="top-films-box">
+            <div class="top-films-item-top">
+                <img src="{{item.urlPoster}}">
+                <span class="top-films-rating">{{item.rating}}</span>
+            </div>
+            <h3 class="top-films-title">{{item.title}}</h3>
+            <div class="top-films-item">
+                <a ng-href="http://www.imdb.com/name/{{director.id}}" ng-repeat="director in item.directors">{{director.name}}</a>
+            </div>
+            <div class="top-films-item">
+                <span class="inline" ng-repeat="ganre in item.ganres">{{ganre}}</span>
+            </div>
+            <div class="top-films-item">
+                <span class="inline" ng-repeat="country in item.countries">{{country}}</span>
+            </div>
+            <div class="top-films-item">
+                <span >{{item.year}}</span>
+            </div>
+            <div class="top-films-item-bottom">
+            	<button class="like-btn" liked="item" ng-click="likedCtrl.favorite(this)">❤</button>
+            </div>
+        </div>
+    </div>
+</div>

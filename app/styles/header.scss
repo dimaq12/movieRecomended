@@ -1,0 +1,27 @@
+.header{
+	background: #424242;
+	border-bottom: 3px solid #89dccc;
+	overflow: hidden;
+	.nav{
+		display: flex;
+		margin: 0 0 0 -20px;
+		a{
+			text-align: center;
+			min-width: 140px;
+			display: block;
+			color: #89dccc;
+			font-size: 1.2em;
+			padding: 28px 20px;
+			box-sizing:content-box;
+			text-transform: uppercase;
+			text-decoration: none;
+			transition: 0.3s;
+			&.active{
+				background: #637a84;
+			}
+			&:hover{
+				background: #637a84;
+			}
+		}
+	}
+}
