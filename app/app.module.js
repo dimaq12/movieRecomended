@@ -1,5 +1,5 @@
 import angular from 'angular'
-import uirouter from 'angular-ui-router'
+import uirouter from '@uirouter/angularjs'
 import Chart from 'chart.js';
 import angularchart from 'angular-chart.js'
 import localstorage from 'angular-local-storage'
@@ -15,7 +15,6 @@ import storageService from './services/storageService.js'
 import chartService from './services/chartService.js'
 
 import './styles/all.scss';
-
 
 angular.module('movieRecomended', [uirouter, localstorage, angularchart])
     .config(routes)
