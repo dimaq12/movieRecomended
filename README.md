@@ -1,6 +1,6 @@
 # movieRecomended
 
-> A AngularJS project
+> An AngularJS project
 
 ## Build Setup
 
