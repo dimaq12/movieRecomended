@@ -17,7 +17,7 @@ export default class mainController {
             this.dataService.getData()
                 .then(response => {
                     this.preload = false;
-                    this.data = response.data.data.movies.slice(0, 21);
+                    this.data = response.data.data.movies.slice(0, 20);
                     this.ifLocalEmpty = false;
                 }, response => this.error = true)
         }
