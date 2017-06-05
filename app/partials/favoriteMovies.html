@@ -2,7 +2,7 @@
 <div class="center content">
     <h2>Your Favorites Movies</h2>
     <div class="top-films">
-        <div ng-repeat="item in likedCtrl.data" class="top-films-box">
+        <div ng-repeat="item in likedCtrl.data track by $index" class="top-films-box">
             <div class="top-films-item-top">
                 <img src="{{item.urlPoster}}">
                 <span class="top-films-rating">{{item.rating}}</span>

@@ -1,21 +1,64 @@
+@import "header.scss";
+@import "topMovies.scss";
+html {
+    min-height: 100vh;
+}
+
 body {
     background-color: #fbfbfb;
     padding: 0;
     margin: 0;
+    min-height: 100vh;
+    [ui-view] {
+        min-height: 100vh;
+    }
 }
 
-@import "header.scss";
-@import "topMovies.scss";
-
-.center{
-	max-width: 1200px;
-	width: 100%;
-	margin: 0 auto;
+.center {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
 }
-.content{
-	margin-top: 30px;
-	h2{
-		text-align: center;
-		font-size: 2em;
-	}
+
+.content {
+    margin-top: 30px;
+    min-height: 100%;
+    &.center {
+        min-height: calc(100vh - 81px);
+    }
+    h2 {
+        text-align: center;
+        font-size: 2em;
+        text-transform: uppercase;
+        color: #616161;
+    }
+}
+
+.preloading {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -100px, -100px);
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.top-films-box.ng-enter {
+    transition: .5s;
+    opacity: 0;
+}
+
+.top-films-box.ng-enter-active {
+    opacity: 1;
+}
+.error{
+    font-size: 1em;
+    color: grey;
+    text-align: center;
 }

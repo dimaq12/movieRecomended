@@ -1,11 +1,16 @@
 <movie-header></movie-header>
-<div class="center content">
+<div ng-if="mainCtrl.preload == true" class="preloading">
+    <img ng-if="mainCtrl.error == false" ng-src={{mainCtrl.loadImage('loading.gif')}}>
+    <span class="error" ng-if="mainCtrl.error == true">Ooops! Somthing went wrong...<br> Try to reload page later!</span>
+</div>
+<div class="center content" ng-animate>
     <h2>Top 20 Movies in History</h2>
-    <div ng-if="mainCtrl.preload == true" class="preloading">Processing...</div>
+    
     <div ng-if="mainCtrl.preload == false" class="top-films">
-        <div ng-repeat="item in mainCtrl.data" class="top-films-box">
+        <div ng-repeat="item in mainCtrl.data track by $index" class="top-films-box" ng-animate>
             <div class="top-films-item-top">
-                <img src="{{item.urlPoster}}">
+                <img ng-src="{{item.urlPoster}}">
+                <div></div>
                 <span class="top-films-rating">{{item.rating}}</span>
             </div>
             <h3 class="top-films-title">{{item.title}}</h3>

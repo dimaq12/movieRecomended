@@ -1,5 +1,6 @@
 import angular from 'angular'
 import uirouter from '@uirouter/angularjs'
+import animate from 'angular-animate'
 import Chart from 'chart.js';
 import angularchart from 'angular-chart.js'
 import localstorage from 'angular-local-storage'
@@ -16,20 +17,10 @@ import chartService from './services/chartService.js'
 
 import './styles/all.scss';
 
-angular.module('movieRecomended', [uirouter, localstorage, angularchart])
+angular.module('movieRecomended', [uirouter, animate, localstorage, angularchart])
     .config(routes)
-    .config(function($sceDelegateProvider) {
-        $sceDelegateProvider.resourceUrlWhitelist([
-            'self',
-            'http://www.myapifilms.com/**'
-        ])
-    })
-    .config(function(localStorageServiceProvider) {
-        localStorageServiceProvider
-            .setPrefix('movieRecomended')
-            .setStorageType('sessionStorage')
-            .setNotify(true, true)
-    })
+    .config(delegateProvider)
+    .config(torageServiceProvider)
     .controller('mainController', mainController)
     .controller('likedController', likedController)
     .controller('chartController', chartController)
@@ -38,3 +29,17 @@ angular.module('movieRecomended', [uirouter, localstorage, angularchart])
     .service('dataService', dataService)
     .service('storageService', storageService)
     .service('chartService', chartService)
+
+function delegateProvider($sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist([
+        'self',
+        'http://www.myapifilms.com/**'
+    ])
+}
+
+function torageServiceProvider(localStorageServiceProvider) {
+    localStorageServiceProvider
+        .setPrefix('movieRecomended')
+        .setStorageType('sessionStorage')
+        .setNotify(true, true)
+}
